@@ -1,0 +1,12 @@
+# Heapsort
+- Sisendiks saame peaaegu täieliku kahendpuu **binaarkuhi (*binary heap*)**
+- Kuhjastame kahendpuu max-kuhjaks
+- Võtame seal järjest maksimaalseid elemente ja korrastame kuhja peale iga elemendi äravõtmist
+- Asetame äravõetud elemendid massiivi lõpust algusesse
+- pseudocode ==L6 10-15==
+- Keerukus
+	- W(siftdown(n)) = $O(lg(n))$
+	- W(makeheap(n)) = n / 2 * W(siftdown(n)) = $O(n \cdot log(n))$
+		- *tegelikult on makeheap keeurkus $O(n)$, kuna shiftdown kutustakse välja alampuudele*
+	- W(removekeys(n)) = n * W(siftdown(n)) = $O(n \cdot log(n))$
+	- W(heapsort(n)) = max(W(makekeap(n)), W(removekeys(n))) = $O(n\cdot log(n))$

@@ -1,0 +1,32 @@
+## Paisksalvestus
+*hashing*
+- Võtmed tesiendatakse asukohaks paiskfunktsiooniga (*hash function*)
+- Võtmed on hajutatud üle massiivi 
+- $O(1)$
+- Põrgete (*collision*) lahendamise strateegia
+	- **Aheldamine (*chaining*)**
+		- ![[Pasted image 20210110173357.png]]
+		- Hoiame kirjeid, mille võtme paiskfunktsiooni väärtus on võrdne välises andmestruktuuris
+		- Lingitud list, otsingupuu, dünaamiline massiiv
+		- Paisktableis hoitakse anmestruktuuri viita mõnikord ka ühte kirjet
+		- Massiivi suurus peaks olema unbes sama suur, kui võtmete arv
+		- **Eelised:**
+			- lihtne lisamine ja eemaldamine
+			- massiivi suurus pole piiranguks
+		- **Puudused:**
+			- mälu lisakulu listi viitade hoidmiseks
+			- mäluhalduse lisakulu (listi elementide loomiseks ja kustutamiseks)
+	- **Avatud adresseerimine (*open addressing*)**
+		- ![[Pasted image 20210110173547.png]]
+		- Kõik elemendid on paisktabelis
+		- Põrke korral valitakse mingi eeskirja järgi järgmine koht
+		- Kasutab **sondeerimist (*probing*)** - kui paiskfunktsiooni poolt määratud koht on hõivatud, siis hüppa edasi ja proovi seda kohta, kuni leiad vaba koha
+			- Tabeli lõpust hüpatakse algusesse
+			- Lineaarne sondeerimine (*Linear Probing*)
+			- Ruutsondeerimine (*Quadratic Probing*)
+			- Topeltpaiskamine (*Double Hashing*)
+			- ==L5 slides 23-25==
+			- Perfektne paisksalvestus (*Perfect Hashing*) ==31==
+		- Positsiooni määrab $h(k,i)$, kus $k$ on võti ja $i$ on sondeerimise number
+		
+- Kui kõik võtmed on ette teada, siis on võimalik luua täiuslik paiskfunktsioon, mis väldib põrkeid
